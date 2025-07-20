@@ -1,61 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏠 Home Services – Laravel API Project
+
+**Home Services** is a modern backend API built with **Laravel (PHP)** for a platform that connects clients with freelancers for home-related services such as cleaning, electrical repairs, plumbing, and more. The system supports multi-role access, real-time communication, secure authentication, and notification handling.
+
+---
+
+## 📸 Screenshots
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="./imgs/home.png" width="1000" alt="Rosa Shop">
 </p>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **PHP Laravel** – Backend Framework  
+- **MySQL** – Database  
+- **Laravel Sanctum** – API Authentication  
+- **Vonage API** – Phone OTP Login  
+- **Laravel Socialite** – Google Login  
+- **Pusher** – Real-time chat  
+- **Firebase Cloud Messaging (FCM)** & **OneSignal** – Notifications  
+- **Queues & Jobs** – For async emails and notifications  
+- **Hostinger** – Deployment & Hosting
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### ✅ General Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Multi-role system: **Clients**, **Freelancers**, **Admins**
+- Secure authentication via **Phone OTP** and **Google Login**
+- Real-time **chat** and **push notifications**
+- Smart **email system** using **queues**
+- Hosted live on **Hostinger**
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 👤 Client & Freelancer Features
 
-### Premium Partners
+- Register/Login via Phone or Google  
+- Create and manage **service orders**  
+- View, update, and rate **profiles**  
+- Receive **notifications** and **emails**  
+- Real-time chat with each other  
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+### 🔧 Admin Dashboard Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Manage **categories** and **orders**
+- View and manage **clients** and **freelancers**
+- Full control over the platform data
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## ⚙️ API Middleware & Enhancements
 
-## Security Vulnerabilities
+- **Request throttling** to prevent abuse  
+- **Pagination** for large dataset responses  
+- **Structured JSON responses** with status codes  
+- **Role-based authorization** and route protection
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 📦 Installation & Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-repo/homeservices-api.git
+   cd homeservices-api
+   ```
+
+2. **Install dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Set up `.env`**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Update `.env` with your credentials**
+   - DB (MySQL)
+   - Vonage (OTP)
+   - Firebase & OneSignal (Notifications)
+   - Mail (SMTP)
+   - Google OAuth
+
+5. **Run migrations**
+   ```bash
+   php artisan migrate
+   ```
+
+6. **(Optional) Seed initial roles/categories**
+   ```bash
+   php artisan db:seed
+   ```
+
+7. **Start the development server**
+   ```bash
+   php artisan serve
+   ```
+
+---
+
+## 🔐 Authentication Notes
+
+- Phone login requires **Vonage** credentials and setup.
+- Google login uses **Laravel Socialite**, be sure to set the Google Client ID and Secret in `.env`.
+- API tokens handled via **Laravel Sanctum**.
+
+---
+
+## 🔔 Notifications
+
+- **FCM**: For app/browser push notifications  
+- **OneSignal**: Used for web push notifications  
+- **Queue Jobs**: Handle delayed email/send notifications asynchronously
+
+---
+
+## 🧪 Testing the API
+
+You can use tools like **Postman** or **Insomnia** to test endpoints. Example headers:
+
+```http
+Authorization: Bearer YOUR_TOKEN
+Accept: application/json
+```
+
+---
+
+## 🌐 Deployment
+
+- Deployed to **Hostinger**
+- `.env` configured for production
+- Queue workers and cron jobs set up for emails and push
+
+
