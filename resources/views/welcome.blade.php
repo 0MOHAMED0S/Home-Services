@@ -54,7 +54,7 @@
   <pre id="token" style="white-space: pre-wrap; background: #f5f5f5; padding: 10px; border: 1px solid #ccc;"></pre>
 </body>
 </html> --}}
-
+{{--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,4 +122,4 @@
   <p>Click the button below to subscribe to push notifications via OneSignal.</p>
   <button onclick="subscribeUserToNotifications()">Subscribe Now</button>
 </body>
-</html>
+</html> --}}
